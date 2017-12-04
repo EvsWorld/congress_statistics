@@ -1,49 +1,59 @@
-// Array of 'member' objects
-var memArray = data.results[0].members;
-
-// stores computed values
-var statistics = {
-  'noOfDems': 0,
-  'noOfReps': 0,
-  'noOfInds': 0,
-  // these are here just for clarity bc created in funct
-  'idsPctVotewPty': 0,  
-  'repsPctVotewPty': 0, 
-  'indsPctVotewPty': 0, 
-  'top10MemsAtten': [], // Array of member collections
-  'bot10MemsAtten': [], // Array of member collections
-  'top10MemsLoyalty': [], // Array of member collections
-  'bot10MemsLoyalty': [], // Array of member collections
-};
-
-// Makes list of reps, dems, and Inds. Pushes total number to statistics.noOfDems, noOfReps, noOfInds
-totalMems(memArray);
-
-getLowest10(memArray, 'votes_with_party_pct');
-getHighest10(memArray, 'votes_with_party_pct');
+// Calls all these functions when page loads
+$(function(){ 
+  var jsonData;  
+  var sitePath = window.location.pathname.split('/')[2];
   
-getLowest10(memArray,'missed_votes_pct');
-getHighest10(memArray,'missed_votes_pct');
+  if ( sitePath.match( /senate|sParty|sAtten/ ) ) {
+    jsonData = 'https://nytimes-ubiqum.herokuapp.com/congress/113/senate';
+  } else if ( sitePath.match( /house|hParty|hAtten/) ) {
+    jsonData = "https://nytimes-ubiqum.herokuapp.com/congress/113/house";
+  }
+  
+  // Gets JSON from jsonData variable, parses it into a js object and calls the callback function, in which the JSON will be refered to as 'data'.
+  $.getJSON( jsonData, function(data) {
+    
+  
+  // Array of 'member' objects
+  var memArray = data.results[0].members;
 
-// Make html
-generateAtAGlance();
+  // stores computed values
+  var statistics = {
+    'noOfDems': 0,
+    'noOfReps': 0,
+    'noOfInds': 0,
+    // these are here just for clarity bc created in funct
+    'idsPctVotewPty': 0,  
+    'repsPctVotewPty': 0, 
+    'indsPctVotewPty': 0, 
+    'top10MemsAtten': [], // Array of member collections
+    'bot10MemsAtten': [], // Array of member collections
+    'top10MemsLoyalty': [], // Array of member collections
+    'bot10MemsLoyalty': [], // Array of member collections
+  };
 
-callFillFuncts(window.location.pathname.split("/"))
+  // Makes list of reps, dems, and Inds. Pushes total number to statistics.noOfDems, noOfReps, noOfInds
+  totalMems(memArray);
+
+  getLowest10(memArray, 'votes_with_party_pct');
+  getHighest10(memArray, 'votes_with_party_pct');
+    
+  getLowest10(memArray,'missed_votes_pct');
+  getHighest10(memArray,'missed_votes_pct');
+
+  // Make html
+  generateAtAGlance();
+
+  callFillFuncts(window.location.pathname.split("/")[2]);
 
 function callFillFuncts(windowObjectLoc) {
-  let p = windowObjectLoc[2];
-  if (p === 'hPartyLoyalty.html' || p === 'sPartyLoyalty.html') { 
+  if (windowObjectLoc === 'hPartyLoyalty.html' || windowObjectLoc === 'sPartyLoyalty.html') { 
     fillLoyal(statistics.bot10MemsLoyalty,'least-loyal-body');
     fillLoyal(statistics.top10MemsLoyalty,'most-loyal-body');
-  } else if (p === 'hAttendance.html' || p === 'sAttendance.html') {
+  } else if (windowObjectLoc === 'hAttendance.html' || windowObjectLoc === 'sAttendance.html') {
     fillAttendance(statistics.bot10MemsAtten, 'least-engaged');
     fillAttendance(statistics.top10MemsAtten, 'most-engaged');
   }
 }
-
-
-
-
 
 // Pass this an array of integers, and it finds the max value
 // Reduce works by applying the function passed to it to all items in the arrayKey. First param is accumulator, 2nd is index value being evaluated
@@ -199,7 +209,6 @@ function isATie(array, ind, prop) {
     var listOfLowest10Mems = []; // declare blank array
     sortMemsHtoL(members,prop);
     
-    // I think this is not slicing right
     let smallSlice = members.slice(0,num);
     smallSlice.forEach(function(element, index, array) {
       listOfLowest10Mems.push(element);
@@ -263,7 +272,7 @@ function isATie(array, ind, prop) {
   let tbl = document.getElementById(idName);
   tbl.innerHTML = '';
     for (let mbr=0; mbr < arrayArg.length; mbr++) {
-      let totPartyVotes = Math.round((arrayArg[mbr].total_votes)*(arrayArg[mbr].votes_with_party_pct)*0.01);
+      let totPartyVotes = Math.floor((arrayArg[mbr].total_votes)*(arrayArg[mbr].votes_with_party_pct)*0.01);
       // Omit middle name if it is null
       let mName = arrayArg[mbr].middle_name ? arrayArg[mbr].middle_name : '';
       let row = tbl.appendChild(document.createElement('tr'));
@@ -278,7 +287,7 @@ function isATie(array, ind, prop) {
   let tbl = document.getElementById(idName);
   tbl.innerHTML = '';
     for (let mbr=0; mbr < arrayArg.length; mbr++) {
-      let totPartyVotes = Math.round((arrayArg[mbr].total_votes)*(arrayArg[mbr].missed_votes_pct)*0.01);
+      let totPartyVotes = Math.floor((arrayArg[mbr].total_votes)*(arrayArg[mbr].missed_votes_pct)*0.01);
       // Omit middle name if it is null
       let mName = arrayArg[mbr].middle_name ? arrayArg[mbr].middle_name : '';
       let row = tbl.appendChild(document.createElement('tr'));
@@ -289,7 +298,8 @@ function isATie(array, ind, prop) {
     }
   }
 
-
+} );
+});
 // Loop over the top ten and push to an object inside "statistics"
 
 // Loop over listOfDemocrats, and for each memeber, extract the % voted with party number, add them up, then divide by the number of members.

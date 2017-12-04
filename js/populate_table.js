@@ -1,5 +1,16 @@
-
-'use sctrict';
+// Calls all these functions when page loads
+$(function(){ 
+  var jsondata;  
+  
+  if ('house'.split('/').indexOf('https://nytimes-ubiqum.herokuapp.com/congress/113/senate')) {
+    jsondata = 'https://nytimes-ubiqum.herokuapp.com/congress/113/senate';
+  } else if ('senate'.split('/').indexOf('https://nytimes-ubiqum.herokuapp.com/congress/113/house')) {
+    jsondata = "https://nytimes-ubiqum.herokuapp.com/congress/113/house";
+  }
+  
+  $.getJSON( jsondata, function(data) {
+    
+'use strict';
 // document.getElementById('senate-data').innerHTML = JSON.stringify(data,null,2);
 //One initial thought was to start with a blank string (var finalContent = '';), then loop over the data object and concatonate onto the blank string until table is complete, then asign to table by calling document.getElementById('senate-data').innerHTML(finalContent);
 
@@ -22,7 +33,68 @@
 
 // NO NEED FOR Chrome to rebuild the tableElement HTMLElement. Instead it just adds the new HTMLElement (divElement) to its childNodes.
 // tableElement.appendChild(divElement);
-
+var rawStatesList = {
+  "all": "All",
+  "AL": "Alabama",
+  "AK": "Alaska",
+  "AS": "American Samoa",
+  "AZ": "Arizona",
+  "AR": "Arkansas",
+  "CA": "California",
+  "CO": "Colorado",
+  "CT": "Connecticut",
+  "DE": "Delaware",
+  "DC": "District Of Columbia",
+  "FM": "Federated States Of Micronesia",
+  "FL": "Florida",
+  "GA": "Georgia",
+  "GU": "Guam",
+  "HI": "Hawaii",
+  "ID": "Idaho",
+  "IL": "Illinois",
+  "IN": "Indiana",
+  "IA": "Iowa",
+  "KS": "Kansas",
+  "KY": "Kentucky",
+  "LA": "Louisiana",
+  "ME": "Maine",
+  "MH": "Marshall Islands",
+  "MD": "Maryland",
+  "MA": "Massachusetts",
+  "MI": "Michigan",
+  "MN": "Minnesota",
+  "MS": "Mississippi",
+  "MO": "Missouri",
+  "MT": "Montana",
+  "NE": "Nebraska",
+  "NV": "Nevada",
+  "NH": "New Hampshire",
+  "NJ": "New Jersey",
+  "NM": "New Mexico",
+  "NY": "New York",
+  "NC": "North Carolina",
+  "ND": "North Dakota",
+  "MP": "Northern Mariana Islands",
+  "OH": "Ohio",
+  "OK": "Oklahoma",
+  "OR": "Oregon",
+  "PW": "Palau",
+  "PA": "Pennsylvania",
+  "PR": "Puerto Rico",
+  "RI": "Rhode Island",
+  "SC": "South Carolina",
+  "SD": "South Dakota",
+  "TN": "Tennessee",
+  "TX": "Texas",
+  "UT": "Utah",
+  "VT": "Vermont",
+  "VI": "Virgin Islands",
+  "VA": "Virginia",
+  "WA": "Washington",
+  "WV": "West Virginia",
+  "WI": "Wisconsin",
+  "WY": "Wyoming"
+};
 
 var tr, td, th, row, tbl, counter, i, fieldsArray, fieldsArr, partyArray, ptyArr, state, ptyFromForm, st;
 const fields = ['first_name','middle_name','last_name','party', 'state', 'seniority', 'votes_with_party_pct'];
@@ -158,7 +230,8 @@ function genTbleBody(fieldsArr, ptyArr, state) {
     console.log('ptyFromForm = ' + ptyFromForm + ' st = ' + st);
   });
 
-
+} );
+});
 
 
       // Below is the manual version of the above loop
