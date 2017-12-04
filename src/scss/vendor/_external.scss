@@ -1,0 +1,142 @@
+//I just dropped this in copied from Tanias example
+#bootstrap-overrides {
+  * {
+  box-sizing: border-box;
+  }
+  
+  body {
+    
+  	// background: #158cb9;  //Why does this change nothing?
+  	color: rgb(186, 221, 195);  //Why does this change nothing?
+  	font-family: 'Montserrat', sans-serif;
+  }
+  h1,
+  h2 {
+  	font-weight: bold;
+  }
+  p {
+  	font-size: 16px;
+  	color: #0f0e0e;
+  }
+  .navbar {
+  	margin-bottom: 0;
+    margin-top: 0;
+  }
+  .page-header {
+    background: $header-color;
+  	color: white;
+    margin-bottom: 0;
+    margin-top: 0;
+    display: flex;
+    justify-content: space-between;
+    padding:0;
+    align-content: center;
+  }
+
+  .logo, .link {
+    display:flex;
+    margin: 5px;
+    // padding: 10px;
+    max-width: 70%;
+    max-height: 70%;
+    object-fit: contain;
+
+  }
+  // How to put on a media query for this jumbotron?
+  .jumbotron {
+  	background: $header-color;
+  	color: white;
+  	text-align: center;
+    margin-bottom: 0;
+    p {
+    	color: white;
+    	font-size: 26px;
+      font-weight:bold;
+    }
+  }
+
+  .navbar-inverse {
+  	background: #2E2F31;
+  	border: 0;
+  }
+  .dropdown-menu {
+  	background: #2E2F31;
+  	border-radius: 0;
+  	border: 0;
+  }
+  .navbar-inverse .navbar-nav li a {
+  	color: #f7f7f7;
+  	font-size: 16px;
+    &:hover {
+  	background: #27A967;
+    }
+  }
+  .navbar-inverse .navbar-nav .dropdown-menu li a:hover {
+  	background: #2C463C;
+  }
+  .dropdown-menu li a {
+  	padding: 10px;
+  }
+  .btn-primary {
+  	color: #fff;
+  	background-color: transparent;
+  	border-color: white;
+  	margin-bottom: 5px;
+
+    &:hover {
+  	color: white;
+  	background-color: $header-color;
+  	border-color: white;
+    }
+  }
+  .glyphicon-large {
+  	font-size: 100px;
+  }
+  .my-data-container {
+  	// text-align: center;
+    // display: flex;
+    // flex-direction: column;ˇ
+    // // align-items is what centered in left/right. But is there a simpler way? Margin: auto; yes
+    // align-items: center;
+    // justify-content: center;
+    padding: 20px 20px 20px 20px;
+    background-color: rgb(186, 221, 195);
+    p {
+    	margin-bottom: 30px;
+    	font-family: sans-serif;
+    }
+  }
+
+  //Formatting table
+  .congress-table {
+    // display: flex;
+    // justify-content: center;
+    margin: auto;
+    width: 90%; //takes up 90% of container
+    border: 1px solid $header-color;
+    td,th,tr {
+      border: 1px solid  #000;
+      text-align: center;
+    }
+  }
+  #filterForm {
+    display: flex;
+    justify-content: space-between;
+    .checkboxes {
+      border: 1px solid $header-color;
+    }
+  }
+  
+  table {
+    border: 1px solid $border-color;
+    // padding: 50px;
+    td, th {
+      border: 1px solid $border-color;
+      padding: .3em;
+    }
+  }
+  .bottom-box {
+    display: flex;
+  }
+
+}

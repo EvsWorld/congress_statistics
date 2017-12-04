@@ -4,10 +4,11 @@
   "description": "Basic node scss example",
   "main": "index.js",
   "scripts": {
-    "dev" : "npm-run-all --parallel dev:server dev:css",
+    "dev": "npm-run-all --parallel dev:server  dev:css",
     "dev:css": "node-sass -w src/scss/style.scss dist/css/style.css",
     "dev:server": "live-server",
-    "build": "node-sass --output-style compressed src/scss/style.scss dist/css/style.css"
+    "build": "node-sass --output-style compressed src/scss/style.scss dist/css/style.css",
+    "builddev": "npm-run-all --parallel build dev"
   },
   "author": "Christoph Nissen",
   "license": "ISC",

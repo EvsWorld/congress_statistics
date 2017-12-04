@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html class="no-js">
+
+<head>
+  <meta charset="utf-8">
+  <title>House Attendance</title>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/ramda/0.25.0/ramda.min.js"></script>
+  <!-- <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'> -->
+
+  <!-- <link href="//ajax.googleapis.com" rel="dns-prefetch"> -->
+  <link rel="stylesheet" type="text/css" href="../dist/css/style.css">
+
+  <!--  -->
+
+</head>
+
+<body id="bootstrap-overrides">
+  <div class="page-header container-fluid">
+    <a><img class="logo" src="../img/TGIF_logo.png" /></a>
+    <a class="link" href="https://www.whitehouse.gov/the_press_office/TransparencyandOpenGovernment">White House Site</a>
+    <!-- <p><a class="btn btn-primary btn-lg" href="#" role="button">Download Free Trial &raquo;</a> <a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p> -->
+  </div>
+
+  <!-- ******************** navigation ********* -->
+  <nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <!-- <a class="navbar-brand" href="index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a> -->
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-left">
+          <a class="navbar-brand" href="../index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a>
+          <!-- <li><a href="#">About</a></li> -->
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Branches Of Congress 113<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="house.html">House</a></li>
+              <li><a href="senate.html">Senate</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Attendance<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">House</a></li>
+              <li><a href="sAttendance.html">Senate</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Party Loyalty<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="hPartyLoyalty.html">House</a></li>
+              <li><a href="sPartyLoyalty.html">Senate</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header>
+    <div>
+    </div>
+  </header>
+  <!--Table container-->
+  <div class="container-fluid my-data-container">
+    <h2>Attendance</h2>
+    <p>The Constitution specifies that a majority of members constitutes a quorum to do business in each house. Representatives and senators rarely force the presence of a quorum by demanding quorum calls; thus, in most cases, debates continue even if a
+      majority is not present.</p>
+
+    <p>The Senate uses roll-call votes; a clerk calls out the names of all the senators, each senator stating "aye" or "no" when his or her name is announced. The House reserves roll-call votes for the most formal matters, as a roll-call of all 435 representatives
+      takes quite some time; normally, members vote by electronic device. In the case of a tie, the motion in question fails. In the Senate, the Vice President may (if present) cast the tiebreaking vote.</p>
+
+    <h2>House at a glance</h2>
+    <table class="at-a-glance">
+      <thead>
+        <tr>
+          <th>Party</th>
+          <th>Number of Reps</th>
+          <th>% Voted with Prty</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Democrats</td>
+          <td id=noOfDems>--</td>
+          <td id="demsPctVotewPty">--</td>
+        </tr>
+        <tr>
+          <td>Republicans</td>
+          <td id=noOfReps>--</td>
+          <td id="repsPctVotewPty">--</td>
+        </tr>
+        <tr>
+          <td>Independents</td>
+          <td id=noOfInds>--</td>
+          <td id="indsPctVotewPty">--</td>
+        </tr>
+        <tr>
+          <td>Total</td>
+          <td id=noOfTot>--</td>
+          <td id="totPctVotewPty">--</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="bottom-box">
+      <div>
+        <h2>Least Engaged (Bottom 10% Attendance)</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Number of Missed Votes</th>
+              <th>% Missed</th>
+            </tr>
+          </thead>
+          <tbody id="least-engaged">
+            <!-- content inserted here -->
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <h2>Most Engaged (Top 10% Attendance)</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Number of Missed Votes</th>
+              <th>% Missed</th>
+            </tr>
+          </thead>
+          <tbody id="most-engaged">
+            <!-- content inserted here -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+
+
+  <footer>
+    <h3> 2016 TGIF | All rights reserved </h3>
+  </footer>
+
+  <script src="../js/house.js"></script>
+  <script src="../js/statistics_calc.js"></script>
+
+  <!-- <script>window.jQuery || document.write('<script src="assets/components/jquery.js"><\/script>');</script> -->
+
+  <!-- <script src="assets/js/scripts.min.js"></script> -->
+
+  <!-- <script>
+  (function(f,i,r,e,s,h,l){i['GoogleAnalyticsObject']=s;f[s]=f[s]||function(){
+  (f[s].q=f[s].q||[]).push(arguments)},f[s].l=1*new Date();h=i.createElement(r),
+  l=i.getElementsByTagName(r)[0];h.async=1;h.src=e;l.parentNode.insertBefore(h,l)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-XXXXXXXX-XX');
+  ga('send', 'pageview');
+  </script> -->
+
+</body>
+
+</html>
+
+
+
+
+<!-- This is just an example of a container with a row with three sections. -->
+<!-- <div class="col-md-4">
+  <span class="glyphicon glyphicon-cloud glyphicon-large" aria-hidden="true"></span>
+  <h3>Cloud Computable</h3>
+  <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+</div>
+<div class="col-md-4">
+  <span class="glyphicon glyphicon-floppy-disk glyphicon-large" aria-hidden="true"></span>
+  <h3>Backwards Compatible</h3>
+  <p>Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. Lorem ipsum dolor.</p>
+</div>
+<div class="col-md-4">
+  <span class="glyphicon glyphicon-console glyphicon-large" aria-hidden="true"></span>
+  <h3>GUI Free</h3>
+  <p>Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+</div>
+</div>
+ -->

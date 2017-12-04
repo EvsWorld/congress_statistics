@@ -1,17 +1,126 @@
 <!doctype html>
-<html lang="en">
-
+<html class="no-js">
 <head>
-    <title>Basic Node SCSS</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" type="text/css" href="dist/css/style.css">
+  <meta charset="utf-8">
+  <title>Congressional Statistics</title>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/ramda/0.25.0/ramda.min.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" type="text/css" href="dist/css/style.css">
+
+
 </head>
-
-<body>
-    <div id="example">
-        <h1>Hello, world!</h1>
+<body id="bootstrap-overrides">
+  <div class="jumbotron">
+    <div class="container">
+      <h1 class="headline">TGIF</h1>
+      <p>A website for viewing voting history of congress</p>
+      <br>
+      <!-- <p><a class="btn btn-primary btn-lg" href="#" role="button">Download Free Trial &raquo;</a> <a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p> -->
     </div>
-</body>
+  </div>
 
+  <nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-left">
+          <!-- <li><a href="#">About</a></li> -->
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Branches Of Congress 113<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="html/house.html">House</a></li>
+              <li><a href="html/senate.html">Senate</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Attendance<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="html/hAttendance.html">House</a></li>
+              <li><a href="html/sAttendance.html">Senate</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Party Loyalty<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="html/hPartyLoyalty.html">House</a></li>
+              <li><a href="html/sPartyLoyalty.html">Senate</a></li>
+            </ul>
+          </li>
+          <li><a href="https://www.whitehouse.gov/the_press_office/TransparencyandOpenGovernment">White House Site</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="container-fluid my-data-container">
+    <h2>About Us</h2>
+    <p>Openness, accountability, and honesty define government transparency. In a free society, transparency is government's obligation to share information with citizens. It is at the heart of how citizens hold their public officials accountable. Here at
+      TGIF we believe that government should be transparent.</p>
+    <p>Governments exist to serve the people. Information on how officials conduct the public business and spend taxpayer money must be readily available and easily understood. This transparency allows good and just governance. Transparency promotes accountability
+      and provides information for citizens about what their Government is doing.</p>
+    <p>We also believe that government should be participatory. Public engagement enhances the Government's effectiveness and improves the quality of its decisions. Knowledge is widely dispersed in society, and public officials benefit from having access
+      to that dispersed knowledge. We invite you to use our site to become actively engaged in American government.</p>
+    <p>TGIF works to disclose information in forms that the public can readily find and use. We solicit public feedback to identify information of greatest use to the public.</p>
+
+    <h3>Background History of Government Transparency</h3>
+    <p>In the West, the idea that government should be open to public scrutiny and susceptible to public opinion dates back at least to the time of the Enlightenment, when many philosophes made an attack on absolutist doctrine of state secrecy, a core part
+      of their intellectual project. The passage of formal legislative instruments to this end can also be traced to this time with Sweden, for example, (which then included Finland as a Swedish-governed territory) enacting free press legislation as part
+      of its constitution (Freedom of the Press Act, 1766). This approach, and that of the philosophes more broadly, is strongly related to recent historiography on the eighteenth-century public sphere.
+
+      <p>Influenced by Enlightenment thought, the revolutions in America (1776) and France (1789), freedom of the press enshrined provisions and requirements for public budgetary accounting and freedom of the press in constitutional articles. In the nineteenth
+        century, attempts by Metternichean statesmen to row back on these measures were vigorously opposed by a number of eminent liberal politicians and writers, Bentham, Mill and Acton prominent among the latter.</p>
+
+      <p>Open government is widely seen to be a key hallmark of contemporary democratic practice and is often linked to the passing of freedom of information legislation. Scandinavian countries claim to have adopted the first freedom of information legislation,
+        dating the origins of its modern provisions to the eighteenth century and Finland continuing the presumption of openness after gaining independence in 1917, passing its Act on Publicity of Official Documents in 1951 (superseded by new legislation
+        in 1999).</p>
+
+      <p>The United States passed its Freedom of Information Act (FOIA) in 1966, FOIAs, Access to Information Acts (AIAs) or equivalent laws were passed in Denmark and Norway in 1970.</p>
+  </section>
+
+
+
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  
+  </body>
 </html>
+
+
+
+
+<!-- This is just an example of a container with a row with three sections. -->
+<!-- <div class="col-md-4">
+  <span class="glyphicon glyphicon-cloud glyphicon-large" aria-hidden="true"></span>
+  <h3>Cloud Computable</h3>
+  <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+</div>
+<div class="col-md-4">
+  <span class="glyphicon glyphicon-floppy-disk glyphicon-large" aria-hidden="true"></span>
+  <h3>Backwards Compatible</h3>
+  <p>Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. Lorem ipsum dolor.</p>
+</div>
+<div class="col-md-4">
+  <span class="glyphicon glyphicon-console glyphicon-large" aria-hidden="true"></span>
+  <h3>GUI Free</h3>
+  <p>Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+</div>
+</div>
+ -->
