@@ -33,6 +33,8 @@ $(function(){
 
 // NO NEED FOR Chrome to rebuild the tableElement HTMLElement. Instead it just adds the new HTMLElement (divElement) to its childNodes.
 // tableElement.appendChild(divElement);
+
+ 
 var rawStatesList = {
   "all": "All",
   "AL": "Alabama",
@@ -231,6 +233,7 @@ function genTbleBody(fieldsArr, ptyArr, state) {
   });
 
 } );
+
 });
 
 

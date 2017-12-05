@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html class="no-js">
+
 <head>
   <meta charset="utf-8">
   <title>House Data</title>
@@ -10,17 +11,20 @@
   <!-- Maybe I could use something like this later: https://www.tutorialrepublic.com/codelab.php?topic=bootstrap&file=data-table-with-filter-row-feature -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <script src="//cdnjs.cloudflare.com/ajax/libs/ramda/0.25.0/ramda.min.js"></script>
-  <!-- <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'> -->
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 
   <!-- <link href="//ajax.googleapis.com" rel="dns-prefetch"> -->
+  <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.js">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ramda/0.25.0/ramda.min.js"></script>
   <link rel="stylesheet" type="text/css" href="../dist/css/style.css">
+</head>
 
-  <!--  -->
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.js"> </script> </head>
 <body id="bootstrap-overrides">
   <div class="page-header container-fluid">
     <a><img class="logo" src="../img/TGIF_logo.png" /></a>
@@ -73,7 +77,9 @@
   <!-- Container-fluid class fills to width of screen -->
   <section class="container-fluid my-data-container">
     <h2>House of Representatives</h2>
-    <p>The major power of the House is to pass federal legislation that affects the entire country, although its bills must also be passed by the Senate and further agreed to by the U.S. President before becoming law (unless both the House and Senate re-pass the legislation with a two-thirds majority in each chamber). The House has some exclusive powers: the power to initiate revenue bills, to impeach officials (impeached officials are subsequently tried in the Senate), and to elect the U.S. President in case there is no majority in the Electoral College.</p>
+    <p>The major power of the House is to pass federal legislation that affects the entire country, although its bills must also be passed by the Senate and further agreed to by the U.S. President before becoming law (unless both the House and Senate re-pass
+      the legislation with a two-thirds majority in each chamber). The House has some exclusive powers: the power to initiate revenue bills, to impeach officials (impeached officials are subsequently tried in the Senate), and to elect the U.S. President
+      in case there is no majority in the Electoral College.</p>
     <p>Each U.S. state is represented in the House in proportion to its population as measured in the census, but every state is entitled to at least one representative. </p>
 
     <form id="filterForm" action="">
@@ -91,7 +97,7 @@
       </thead>
       <!-- headers get generated here -->
       <tbody id="data-body">
-      <!-- Connent gets inserted here -->
+        <!-- Connent gets inserted here -->
       </tbody>
       </div>
     </table>
@@ -99,12 +105,11 @@
 
 
 
-  <footer>
-    <h3> 2016 TGIF | All rights reserved </h3>
-  </footer>
+  <div id="my-footer-id"></div>
 
   <!-- <script src="../js/house.js"></script> -->
   <script src="../js/populate_table.js"></script>
+  <script src="../js/react_code.js" type="text/babel"></script>
 
 
 
@@ -122,7 +127,8 @@
   ga('send', 'pageview');
   </script> -->
 
-  </body>
+</body>
+
 </html>
 
 
