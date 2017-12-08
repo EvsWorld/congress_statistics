@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Senate Data</title>
+  <title> React Senate Attendance Sandbox</title></title>
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="description" content="">
@@ -12,19 +12,19 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <script src="//cdnjs.cloudflare.com/ajax/libs/ramda/0.25.0/ramda.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-bootstrap/0.31.5/react-bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ramda/0.25.0/ramda.min.js"></script>
   <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 
   <!-- <link href="//ajax.googleapis.com" rel="dns-prefetch"> -->
   <script src="https://unpkg.com/react@15/dist/react.js"></script> <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
   <script src="https://unpkg.com/babel-standalone@6.15.0/babel.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.js">
-  </script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.js">
+  </script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ramda/0.25.0/ramda.min.js"></script>
+  
   <link rel="stylesheet" type="text/css" href="../dist/css/style.css">
-
 </head>
-
 
 <body id="bootstrap-overrides">
   <div class="page-header container-fluid">
@@ -49,17 +49,17 @@
         <ul class="nav navbar-nav navbar-left">
           <a class="navbar-brand" href="../index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a>
           <!-- <li><a href="#">About</a></li> -->
-          <li class="dropdown">
+          <!-- <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Branches Of Congress 113<span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li><a href="house.html">House</a></li>
-              <li><a href='#'>Senate</a></li>
+              <li><a href="senate.html">Senate</a></li>
             </ul>
           </li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Attendance<span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="hAttendance.html">House</a></li>
+              <li><a href="#">House</a></li>
               <li><a href="sAttendance.html">Senate</a></li>
             </ul>
           </li>
@@ -67,56 +67,96 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Party Loyalty<span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li><a href="hPartyLoyalty.html">House</a></li>
-              <li><a href="sPartyLoyalty.html">Senate</a></li>
-            </ul>
-          </li>
+              <li><a href="sPartyLoyalty.html">Senate</a></li> -->
+          <!-- </ul>
+          </li> -->
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Container-fluid class fills to width of screen -->
-  <section class="container-fluid my-data-container">
-    <h2>Senators</h2>
-    <p>First convened in 1789, the composition and powers of the Senate are established in Article One of the U.S. Constitution. Each state is represented by two senators, regardless of population, who serve staggered six-year terms. The Senate has several
-      exclusive powers not granted to the House, including consenting to treaties as a precondition to their ratification and consenting to or confirming appointments of Cabinet secretaries, federal judges, other federal executive officials, military
-      officers, regulatory officials, ambassadors, and other federal uniformed officers, as well as trial of federal officials impeached by the House.</p>
+  <header>
+    <div>
+    </div>
+  </header>
+  <!--Table container-->
+  <div class="container-fluid my-data-container">
+    <h2>Attendance (Sand Box)</h2>
+    <p>That can I; At least, the whisper goes so. Our last king, Whose image even but now appear'd to us, Was, as you know, by Fortinbras of Norway, Thereto prick'd on by a most emulate pride, Dared to the combat; in which our valiant Hamlet-- For so this side
+of our known world esteem'd him-- Did slay this Fortinbras; who by a seal'd compact, Well ratified by law and heraldry, Did forfeit, with his life, all those his lands Which he stood seized of, to the conqueror: Against the which, a moiety competent Was
+gaged by our king; which had return'd To the inheritance of Fortinbras, Had he been vanquisher; as, by the same covenant, And carriage of the article design'd, His fell to Hamlet. Now, sir, young Fortinbras, Of unimproved mettle hot and full, Hath in
+th...</p>
 
-    <form id="filterForm" action="">
-      <div class="checkboxes">
-        <input id="rep" type="checkbox" name="Party" value="R"> Republican
-        <input id="dem" type="checkbox" name="Party" value="D"> Democrate
-        <input id="ind" type="checkbox" name="Party" value="I"> Independent
-      </div>
-      <select id="stateSelect"></select>
-    </form>
+    <p>I think it be no other but e'en so: Well may it sort that this portentous figure Comes armed through our watch; so like the king That was and is the question of these wars.</p>
 
-    <table class="congress-table" id="senate-data">
-      <thead id="data-head">
-
-      </thead>
-      <!-- headers get generated here -->
-      <tbody id="data-body">
-        <!-- Connent gets inserted here -->
-      </tbody>
-      </div>
+    <h2>House at a glance (Sand box)</h2>
+    <table id="at-a-glance">
+      <!-- Content gets inserted from React here -->
     </table>
-  </section>
 
+    <div class="bottom-box">
+      <div>
+        <h2>Least Engaged (Bottom 10% Attendance) (Sand Box)</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Number of Missed Votes</th>
+              <th>% Missed</th>
+            </tr>
+          </thead>
+          <tbody id="least-engaged">
+            <!-- content inserted here -->
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <h2>Most Engaged (Top 10% Attendance) (Sand Box)</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Number of Missed Votes</th>
+              <th>% Missed</th>
+            </tr>
+          </thead>
+          <tbody id="most-engaged">
+            <!-- content inserted here -->
+          </tbody>
+        </table>
+      </div>
+    </div>
 
+  </div>
 
+  <div class="bottom-box">
+    <div>
+      <h2>Least Engaged (Bottom 10% Attendance) (Sand Box) bottom</h2>
+      <div id="test-data-id1"></div>
+    </div>
+    <div>
+      <h2>Most Engaged (Top 10% Attendance) (Sand Box) bottom</h2>
+      <div id="test-data-id2"></div>
+    </div>
+  </div>
+  <div id="bottom-box">
+    <div>At A Glance (sandbox)</div>
+      <div id="glance-sandbox"></div>
+    </div>
   <div id="my-footer-id"></div>
 
-  <!-- <script src="../js/senate.js"></script> -->
-  <script src="../js/populate_table.js"></script>
+  <!-- <script src="../js/house.js"></script> -->
   <script src="../js/ReactFooter.jsx" type="text/babel"></script>
+  <script src="../js/ReactTest.jsx" type="text/babel"></script>
+  <script src="../js/statistics_calc.js" type="text/babel"></script>
+
   <!-- <script>window.jQuery || document.write('<script src="assets/components/jquery.js"><\/script>');</script> -->
 
   <!-- <script src="assets/js/scripts.min.js"></script> -->
 
   <!-- <script>
   (function(f,i,r,e,s,h,l){i['GoogleAnalyticsObject']=s;f[s]=f[s]||function(){
-  (f[s].q=f[s].q||[]).push(arguments)},f[s].l=1*new Date();h=i.createElement(r),
+  (f[s].q=f[s].q||[]).push(arguments)},f[s].l=1*new Date();h=i.ment(r),
   l=i.getElementsByTagName(r)[0];h.async=1;h.src=e;l.parentNode.insertBefore(h,l)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
   ga('create', 'UA-XXXXXXXX-XX');
@@ -129,22 +169,3 @@
 
 
 
-
-<!-- This is just an example of a container with a row with three sections. -->
-<!-- <div class="col-md-4">
-  <span class="glyphicon glyphicon-cloud glyphicon-large" aria-hidden="true"></span>
-  <h3>Cloud Computable</h3>
-  <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-</div>
-<div class="col-md-4">
-  <span class="glyphicon glyphicon-floppy-disk glyphicon-large" aria-hidden="true"></span>
-  <h3>Backwards Compatible</h3>
-  <p>Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. Lorem ipsum dolor.</p>
-</div>
-<div class="col-md-4">
-  <span class="glyphicon glyphicon-console glyphicon-large" aria-hidden="true"></span>
-  <h3>GUI Free</h3>
-  <p>Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-</div>
-</div>
- -->

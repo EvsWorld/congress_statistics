@@ -13,17 +13,18 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <script src="//cdnjs.cloudflare.com/ajax/libs/ramda/0.25.0/ramda.min.js"></script>
-  <!-- <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ramda/0.25.0/ramda.min.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 
-  <!-- <link href="//ajax.googleapis.com" rel="dns-prefetch"> -->
-  <link rel="stylesheet" type="text/css" href="../dist/css/style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.js"> </script> 
+<script src="https://unpkg.com/react@15/dist/react.js"></script> 
+<script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
 
-  <!--  -->
+<script src="https://unpkg.com/babel-standalone@6.15.0/babel.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.js"> </script> <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
-    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script> </head>
+<link rel="stylesheet" type="text/css" href="../dist/css/style.css">
+ /head>
+
 
 <body id="bootstrap-overrides">
   <div class="page-header container-fluid">
@@ -80,79 +81,31 @@
     <p>Those who consider themselves to be strong partisans, strong Democrats and strong Republicans respectively, tend to be the most faithful in voting for their party's nominee for office and legislation that backs their party's agenda. </p>
 
     <h2>House at a glance</h2>
-    <table class="at-a-glance">
-      <thead>
-        <tr>
-          <th>Party</th>
-          <th>Number of Reps</th>
-          <th>% Voted with Prty</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Democrats</td>
-          <td id=noOfDems>--</td>
-          <td id="demsPctVotewPty">--</td>
-        </tr>
-        <tr>
-          <td>Republicans</td>
-          <td id=noOfReps>--</td>
-          <td id="repsPctVotewPty">--</td>
-        </tr>
-        <tr>
-          <td>Independents</td>
-          <td id=noOfInds>--</td>
-          <td id="indsPctVotewPty">--</td>
-        </tr>
-        <tr>
-          <td>Total</td>
-          <td id=noOfTot>--</td>
-          <td id="totPctVotewPty">--</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <div class='bottom-box'>
-      <div>
-        <h2>Least Loyal (Bottom 10% of Party)</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Number Party Votes</th>
-              <th>% Party Votes</th>
-            </tr>
-          </thead>
-          <tbody id="least-loyal-body">
-            <!-- content inserted here -->
-          </tbody>
-        </table>
-      </div>
-      <div>
-        <h2>Most Loyal (Top 10% of Party)</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Number Party Votes</th>
-              <th>% Party Votes</th>
-            </tr>
-          </thead>
-          <tbody id="most-loyal-body">
-            <!-- content inserted here -->
-          </tbody>
-        </table>
-      </div>
+    <div id="at-a-glance">
+      <!-- react fills here -->
     </div>
 
+  
+  
+  <div class="bottom-box">
+    <div>
+      <h2>Least Loyal (Bottom 10% of Party) </h2>
+      <div id="test-data-id1"></div>
+    </div>
+    <div>
+      <h2>Most Loyal (Top 10% of Party) </h2>
+      <div id="test-data-id2"></div>
+    </div>
   </div>
-
+  
+  </div>
 
   <div id="my-footer-id"></div>
 
   <!-- <script src="../js/house.js"></script> -->
+  <script src="../js/ReactTest.jsx" type="text/babel"></script>
   <script src="../js/statistics_calc.js"></script>
-  <script src="../js/react_code.js" type="text/babel"></script>
+  <!-- <script src="../js/ReactFooter.jsx" type="text/babel"></script> -->
 
 
 

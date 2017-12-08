@@ -16,9 +16,8 @@
   <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 
   <!-- <link href="//ajax.googleapis.com" rel="dns-prefetch"> -->
-  <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
-  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
-  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  <script src="https://unpkg.com/react@15/dist/react.js"></script> <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.js">
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ramda/0.25.0/ramda.min.js"></script>
@@ -88,94 +87,27 @@
       takes quite some time; normally, members vote by electronic device. In the case of a tie, the motion in question fails. In the Senate, the Vice President may (if present) cast the tiebreaking vote.</p>
 
     <h2>House at a glance</h2>
-    <table class="at-a-glance">
-      <thead>
-        <tr>
-          <th>Party</th>
-          <th>Number of Reps</th>
-          <th>% Voted with Prty</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Democrats</td>
-          <td id=noOfDems>--</td>
-          <td id="demsPctVotewPty">--</td>
-        </tr>
-        <tr>
-          <td>Republicans</td>
-          <td id=noOfReps>--</td>
-          <td id="repsPctVotewPty">--</td>
-        </tr>
-        <tr>
-          <td>Independents</td>
-          <td id=noOfInds>--</td>
-          <td id="indsPctVotewPty">--</td>
-        </tr>
-        <tr>
-          <td>Total</td>
-          <td id=noOfTot>--</td>
-          <td id="totPctVotewPty">--</td>
-        </tr>
-      </tbody>
-    </table>
+    <div id="at-a-glance">
+       <!-- react inserts here -->
+    </div>
 
     <div class="bottom-box">
       <div>
-        <h2>Least Engaged (Bottom 10% Attendance)</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Number of Missed Votes</th>
-              <th>% Missed</th>
-            </tr>
-          </thead>
-          <tbody id="least-engaged">
-            <!-- content inserted here -->
-          </tbody>
-        </table>
+        <h2>Least Engaged (Bottom 10% Attendance) (Sand Box) bottom</h2>
+        <div id="test-data-id1"></div>
       </div>
       <div>
-        <h2>Most Engaged (Top 10% Attendance)</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Number of Missed Votes</th>
-              <th>% Missed</th>
-            </tr>
-          </thead>
-          <tbody id="most-engaged">
-            <!-- content inserted here -->
-          </tbody>
-        </table>
+        <h2>Most Engaged (Top 10% Attendance) (Sand Box) bottom</h2>
+        <div id="test-data-id2"></div>
       </div>
     </div>
-
-  </div>
-
-
 
   <div id="my-footer-id"></div>
 
   <!-- <script src="../js/house.js"></script> -->
-  <script src="../js/statistics_calc.js"></script>
-  <script src="../js/react_code.js" type="text/babel"></script>
-
-
-  <!-- <script>window.jQuery || document.write('<script src="assets/components/jquery.js"><\/script>');</script> -->
-
-  <!-- <script src="assets/js/scripts.min.js"></script> -->
-
-  <!-- <script>
-  (function(f,i,r,e,s,h,l){i['GoogleAnalyticsObject']=s;f[s]=f[s]||function(){
-  (f[s].q=f[s].q||[]).push(arguments)},f[s].l=1*new Date();h=i.createElement(r),
-  l=i.getElementsByTagName(r)[0];h.async=1;h.src=e;l.parentNode.insertBefore(h,l)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-XXXXXXXX-XX');
-  ga('send', 'pageview');
-  </script> -->
+  <script src="../js/ReactTest.jsx" type="text/babel"></script>
+<script src="../js/statistics_calc.js" type="text/babel"></script>
+<script src="../js/ReactFooter.jsx" type="text/babel"></script>
 
 </body>
 
