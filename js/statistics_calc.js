@@ -50,7 +50,7 @@ $( function() {
     // generateAtAGlance();
     
     
-    react();
+    react(["votes_with_party_pct","missed_votes_pct"]);
     
 
     // Pass this an array of integers, and it finds the max value
