@@ -95,9 +95,8 @@
   .glyphicon-large {
   	font-size: 100px;
   }
-  .my-data-container {
-    display:none;
-  	// text-align: center;
+  .my-data-container-index {
+    // text-align: center;
     // display: flex;
     // flex-direction: column;ˇ
     // // align-items is what centered in left/right. But is there a simpler way? Margin: auto; yes
@@ -105,11 +104,17 @@
     // justify-content: center;
     padding: 20px 20px 20px 20px;
     background-color: rgb(186, 221, 195);
-    p {
-    	margin-bottom: 30px;
-    	font-family: sans-serif;
-    }
   }
+  .my-data-container {
+    padding: 20px 20px 20px 20px;
+    background-color: rgb(186, 221, 195);
+    display:none;
+      p {
+      	margin-bottom: 30px;
+      	font-family: sans-serif;
+      }
+    }
+  	
 
   //Formatting table
   .congress-table {

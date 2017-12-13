@@ -83,6 +83,7 @@ $( function() {
 
 
     // pass in unsorted array of member objects. 
+    // TODO Is this a closure???  
     function totalMems( members ) {
       var listOfDemocrats = [];
       var listOfRepublicans = [];
