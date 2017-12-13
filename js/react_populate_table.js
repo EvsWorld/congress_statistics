@@ -1,47 +1,4 @@
-// Calls all these functions when page loads
-$(function(){ 
-  
-  $('.my-data-container').hide(); // hide page content while loading
-  
-  var jsondata;  
-  
-  if ('house'.split('/').indexOf('https://nytimes-ubiqum.herokuapp.com/congress/113/senate')) {
-    jsondata = 'https://nytimes-ubiqum.herokuapp.com/congress/113/senate';
-  } else if ('senate'.split('/').indexOf('https://nytimes-ubiqum.herokuapp.com/congress/113/house')) {
-    jsondata = "https://nytimes-ubiqum.herokuapp.com/congress/113/house";
-  }
-  
-  
-  
-  $.getJSON( jsondata, function(data) {
-    $('.loading').hide(); //hides loading image when json loads
-    $('.my-data-container').show(); // show page content again
-    
-'use strict';
-// document.getElementById('senate-data').innerHTML = JSON.stringify(data,null,2);
-//One initial thought was to start with a blank string (var finalContent = '';), then loop over the data object and concatonate onto the blank string until table is complete, then asign to table by calling document.getElementById('senate-data').innerHTML(finalContent);
 
-
-// InnerHTML (string) gets modified here. Youre sending strings to the inner html (the children) fo the elements in the dom that have a 'senate-data' id tag.
-// tableElement.innerHTML = '';
-// tableElement.innerHTML += '<div>MY DIV</div>';
-// tableElement.innerHTML += '<div>MY DIV</div>';
-// tableElement.innerHTML += '<div>MY DIV</div>';
-// tableElement.innerHTML += '<div>MY DIV</div>';
-// Chrome reacts by rebuilding tableElement.
-  // Delete the contents
-  // Read in the new innerHTML and attempt to interpret the string as HTML.
-  // After interpreting, build all the required elements
-  // Add the new elements to tableElement
-  // This is not best practice because all the elements in the dom must be deleted and rebuilt every time you assign tableElement.innerHTML to something.
-
-// var divElement = document.createElement('div');
-// divElement.textContent = 'MY NEW DIV CONTENT';
-
-// NO NEED FOR Chrome to rebuild the tableElement HTMLElement. Instead it just adds the new HTMLElement (divElement) to its childNodes.
-// tableElement.appendChild(divElement);
-
- 
 var rawStatesList = {
   "all": "All",
   "AL": "Alabama",
@@ -104,6 +61,46 @@ var rawStatesList = {
   "WI": "Wisconsin",
   "WY": "Wyoming"
 };
+
+
+
+// Calls all these functions when page loads
+$(function(){ 
+  var jsondata;  
+  
+  if ('house'.split('/').indexOf('https://nytimes-ubiqum.herokuapp.com/congress/113/senate')) {
+    jsondata = 'https://nytimes-ubiqum.herokuapp.com/congress/113/senate';
+  } else if ('senate'.split('/').indexOf('https://nytimes-ubiqum.herokuapp.com/congress/113/house')) {
+    jsondata = "https://nytimes-ubiqum.herokuapp.com/congress/113/house";
+  }
+  
+  $.getJSON( jsondata, function(data) {
+    
+'use strict';
+// document.getElementById('senate-data').innerHTML = JSON.stringify(data,null,2);
+//One initial thought was to start with a blank string (var finalContent = '';), then loop over the data object and concatonate onto the blank string until table is complete, then asign to table by calling document.getElementById('senate-data').innerHTML(finalContent);
+
+
+// InnerHTML (string) gets modified here. Youre sending strings to the inner html (the children) fo the elements in the dom that have a 'senate-data' id tag.
+// tableElement.innerHTML = '';
+// tableElement.innerHTML += '<div>MY DIV</div>';
+// tableElement.innerHTML += '<div>MY DIV</div>';
+// tableElement.innerHTML += '<div>MY DIV</div>';
+// tableElement.innerHTML += '<div>MY DIV</div>';
+// Chrome reacts by rebuilding tableElement.
+  // Delete the contents
+  // Read in the new innerHTML and attempt to interpret the string as HTML.
+  // After interpreting, build all the required elements
+  // Add the new elements to tableElement
+  // This is not best practice because all the elements in the dom must be deleted and rebuilt every time you assign tableElement.innerHTML to something.
+
+// var divElement = document.createElement('div');
+// divElement.textContent = 'MY NEW DIV CONTENT';
+
+// NO NEED FOR Chrome to rebuild the tableElement HTMLElement. Instead it just adds the new HTMLElement (divElement) to its childNodes.
+// tableElement.appendChild(divElement);
+
+ 
 
 var tr, td, th, row, tbl, counter, i, fieldsArray, fieldsArr, partyArray, ptyArr, state, ptyFromForm, st;
 const fields = ['first_name','middle_name','last_name','party', 'state', 'seniority', 'votes_with_party_pct'];

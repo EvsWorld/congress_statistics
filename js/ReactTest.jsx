@@ -25,6 +25,7 @@ function react(property) {
               {data.map((member) => <TableRow anotherProps={p} user ={member} /> )}
             </tbody>
           </table>
+        
         </div>
       );
   
@@ -133,4 +134,34 @@ ReactDOM.render(
         <EvanFooter />, document.getElementById('my-footer-id'),
 );
 
+    
+// ------------------------------------------------------------------
+//  For Filter table
+// ------------------------------------------------------------------
+
+// Render drop down box
+class Dropdown extends React.Component {
+
+constructor(props) {
+    super(props);
+    this.state = {value: ''};
+}
+
+render(){
+    
+   return(
+     // console.log(statesArray);
+       <select value={this.state.value} onChange={(e)=>{this.setState({value: e.target.value})}}>
+          <option value=''> </option>
+          {
+              Object.keys(rawStatesList).map((item,j)=>{
+                  return <option key={item} value={item}>{rawStatesList[item]}</option>
+              })
+          }
+       </select>
+   );
+}
+}
+
+ReactDOM.render(<Dropdown />, document.getElementById('stateSelect2'));    
     

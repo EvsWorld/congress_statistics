@@ -18,8 +18,11 @@ var statistics = {
 };
 
 
+
 // Calls all these functions when page loads
 $( function() {
+  
+  
   var jsonData;
   var sitePath = window.location.pathname.split( '/' )[ 2 ];
 
@@ -29,10 +32,11 @@ $( function() {
     jsonData = "https://nytimes-ubiqum.herokuapp.com/congress/113/house";
   }
 
+
   // Gets JSON from jsonData variable, parses it into a js object and calls the callback function, in which the JSON will be refered to as 'data'.
   $.getJSON( jsonData, function( data ) {
-
-
+    $('.loading').hide(); //hides loading image when json loads
+    $('.my-data-container').show(); // show page content again
     // Array of 'member' objects
     var memArray = data.results[ 0 ].members;
 

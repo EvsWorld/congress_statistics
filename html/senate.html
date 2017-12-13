@@ -74,6 +74,8 @@
       </div>
     </div>
   </nav>
+  
+  <span class="loading"><img src="../img/Forever-Alone_o_98121.gif" /></span>
 
   <!-- Container-fluid class fills to width of screen -->
   <section class="container-fluid my-data-container">
@@ -85,7 +87,7 @@
     <form id="filterForm" action="">
       <div class="checkboxes">
         <input id="rep" type="checkbox" name="Party" value="R"> Republican
-        <input id="dem" type="checkbox" name="Party" value="D"> Democrate
+        <input id="dem" type="checkbox" name="Party" value="D"> Democrat
         <input id="ind" type="checkbox" name="Party" value="I"> Independent
       </div>
       <select id="stateSelect"></select>
@@ -93,23 +95,24 @@
 
     <table class="congress-table" id="senate-data">
       <thead id="data-head">
-
+        <!-- headers get generated here -->
       </thead>
-      <!-- headers get generated here -->
       <tbody id="data-body">
         <!-- Connent gets inserted here -->
+        
       </tbody>
       </div>
     </table>
+    
+    <div id="my-footer-id"></div>
   </section>
 
 
 
-  <div id="my-footer-id"></div>
 
   <!-- <script src="../js/senate.js"></script> -->
   <script src="../js/populate_table.js"></script>
-  <script src="../js/ReactFooter.jsx" type="text/babel"></script>
+  <script src="../js/ReactTest.jsx" type="text/babel"></script>
   <!-- <script>window.jQuery || document.write('<script src="assets/components/jquery.js"><\/script>');</script> -->
 
   <!-- <script src="assets/js/scripts.min.js"></script> -->

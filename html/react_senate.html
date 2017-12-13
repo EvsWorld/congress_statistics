@@ -3,12 +3,12 @@
 
 <head>
   <meta charset="utf-8">
-  <title>House Data</title>
+  <title>Senate Data</title>
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <!-- Maybe I could use something like this later: https://www.tutorialrepublic.com/codelab.php?topic=bootstrap&file=data-table-with-filter-row-feature -->
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -22,7 +22,9 @@
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ramda/0.25.0/ramda.min.js"></script>
   <link rel="stylesheet" type="text/css" href="../dist/css/style.css">
+
 </head>
+
 
 <body id="bootstrap-overrides">
   <div class="page-header container-fluid">
@@ -50,8 +52,8 @@
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Branches Of Congress 113<span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="#">House</a></li>
-              <li><a href="senate.html">Senate</a></li>
+              <li><a href="house.html">House</a></li>
+              <li><a href='#'>Senate</a></li>
             </ul>
           </li>
           <li class="dropdown">
@@ -72,54 +74,44 @@
       </div>
     </div>
   </nav>
-  
-  <span class="loading"><img src="../img/Forever-Alone_o_98121.gif" /></span>
-
 
   <!-- Container-fluid class fills to width of screen -->
   <section class="container-fluid my-data-container">
-    <h2>House of Representatives</h2>
-    <p>The major power of the House is to pass federal legislation that affects the entire country, although its bills must also be passed by the Senate and further agreed to by the U.S. President before becoming law (unless both the House and Senate re-pass
-      the legislation with a two-thirds majority in each chamber). The House has some exclusive powers: the power to initiate revenue bills, to impeach officials (impeached officials are subsequently tried in the Senate), and to elect the U.S. President
-      in case there is no majority in the Electoral College.</p>
-    <p>Each U.S. state is represented in the House in proportion to its population as measured in the census, but every state is entitled to at least one representative. </p>
+    <h2>Senators</h2>
+    <p>First convened in 1789, the composition and powers of the Senate are established in Article One of the U.S. Constitution. Each state is represented by two senators, regardless of population, who serve staggered six-year terms. The Senate has several
+      exclusive powers not granted to the House, including consenting to treaties as a precondition to their ratification and consenting to or confirming appointments of Cabinet secretaries, federal judges, other federal executive officials, military
+      officers, regulatory officials, ambassadors, and other federal uniformed officers, as well as trial of federal officials impeached by the House.</p>
 
     <form id="filterForm" action="">
       <div class="checkboxes">
         <input id="rep" type="checkbox" name="Party" value="R"> Republican
-        <input id="dem" type="checkbox" name="Party" value="D"> Democrat
+        <input id="dem" type="checkbox" name="Party" value="D"> Democrate
         <input id="ind" type="checkbox" name="Party" value="I"> Independent
       </div>
       <select id="stateSelect"></select>
+      <div id="stateSelect2"></div>
+
     </form>
-    
+
     <table class="congress-table" id="senate-data">
       <thead id="data-head">
-        <!-- headers get generated here -->
+
       </thead>
+      <!-- headers get generated here -->
       <tbody id="data-body">
-        
-        
         <!-- Connent gets inserted here -->
       </tbody>
       </div>
     </table>
-    
-    <div id="my-footer-id"></div>
-    
   </section>
 
 
 
+  <div id="my-footer-id"></div>
 
-  <!-- <script src="../js/house.js"></script> -->
-  <script src="../js/populate_table.js"></script>
-  <script src="../js/ReactTest.jsx" type="text/babel"></script>
-  <!-- <script src="../js/ReactFooter.jsx" type="text/babel"></script> -->
-
-
-
-
+  <!-- <script src="../js/senate.js"></script> -->
+  <script src="../js/react_populate_table.js"></script>
+  <script src="../js/ReactFooter.jsx" type="text/babel"></script>
   <!-- <script>window.jQuery || document.write('<script src="assets/components/jquery.js"><\/script>');</script> -->
 
   <!-- <script src="assets/js/scripts.min.js"></script> -->

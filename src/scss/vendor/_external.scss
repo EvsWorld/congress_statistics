@@ -28,9 +28,12 @@
     margin-bottom: 0;
     margin-top: 0;
     display: flex;
-    justify-content: space-between;
+    // justify-content: space-between;
     padding:0;
-    align-content: center;
+    // align-content: center;
+    a {
+      justify-content: center;
+    }
   }
 
   .logo, .link {
@@ -93,6 +96,7 @@
   	font-size: 100px;
   }
   .my-data-container {
+    display:none;
   	// text-align: center;
     // display: flex;
     // flex-direction: column;ˇ
@@ -138,6 +142,14 @@
   .bottom-box {
     display: flex;
     justify-content: space-between;
+  }
+  .loading { 
+    display: flex;
+    justify-content: center;   
+    height:20%; 
+  }
+  #my-footer-id {
+    // background-color: white;
   }
 
 }
